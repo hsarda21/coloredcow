@@ -5,16 +5,16 @@ body {
   margin:0;
   padding:0;
   font-family: sans-serif;
-  background: linear-gradient(#141e30, #243b55);
+  background: #141e30;
 }
 
 div {
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 50%;
   width: 650px;
   padding: 40px;
-  padding-left: 30px;
+  padding-left: 20px;
   align-items: center;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.5);
@@ -38,6 +38,7 @@ li img {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 20px;
+  margin-right: 20px;
   height: 82px;
   width: 82px;
 }
@@ -55,4 +56,30 @@ li {
 li:hover {
   background: #c96736;
   cursor: pointer;
+}
+
+div .newbook {
+  position: relative;
+  display: inline-block;
+  border: none;
+  padding: 10px 20px;
+  background: #141e30;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 0px;
+  letter-spacing: 4px
+}
+
+div .newbook:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 100px #03e9f4;
 }

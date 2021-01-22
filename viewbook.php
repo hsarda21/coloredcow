@@ -7,34 +7,34 @@
 <body>
 	<div class="login-box">
   <h2>Book Details</h2>
-  <center><img src="https://static.toiimg.com/photo/72975551.cms" style = "padding-bottom: 40px" /></center>
-  <form action = "insert.php" method = "post" enctype="multipart/form-data">
+  <?php 
+  include_once 'database.php'; 
+  $id = $_GET['id'];
+  $res = mysqli_query($conn,"select * from books where ID = " . $id );
+  $row = mysqli_fetch_array($res);
+  ?>
+  <center><img src="<?php echo $row["picture"] ?>" style = "padding-bottom: 40px" /></center>
+  <form name = "viewbook" method = "post" enctype="multipart/form-data">
     <div class="user-box">
-      <input type="text" name="name" value = "Sample Book">
+
+      <input type="text" name="name" value = "<?php echo $row["name"] ?>">
       <label>Name</label>
     </div>
     <div class="user-box">
-      <textarea id = "description" name="description"></textarea>
+      <textarea id = "description" name="description"><?php echo $row["description"] ?></textarea>
       <label>Description</label>
     </div>
     <div class="user-box">
-      <input type="text" name="author" value = "Sample Author">
+      <input type="text" name="author" value = "<?php echo $row["author"] ?>">
       <label>Author Name</label>
     </div>
     <center>
-    <a href="#" onclick="this.closest('form').submit()">
-      <!--<span></span>
-      <span></span>
-      <span></span>
-      <span></span>-->
+    <a href="index.php" >
       All Books
     </a>
 	</center>
   </form>
 </div>
 
-<script type="text/javascript">
-  document.getElementById("description").value = "This is a sample description that should fit more than one line.";
-</script>
 </body>
 </html>
